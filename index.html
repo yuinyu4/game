@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEON DRONE FPS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="gameCanvas"></div>
+
+  <!-- 시작 화면 -->
+  <section id="startScreen" class="screen">
+    <div class="panel start-panel">
+      <p class="eyebrow">CYBERPUNK TRAINING ZONE</p>
+      <h1>NEON DRONE FPS</h1>
+      <p class="desc">
+        어두운 미래 도시의 훈련 구역에서 몰려오는 드론을 처치하며 최대한 오래 살아남으십시오.
+      </p>
+
+      <button id="startButton" class="primary-btn">Click to Start</button>
+
+      <div class="controls">
+        <div><b>WASD</b><span>이동</span></div>
+        <div><b>Mouse</b><span>시점 회전</span></div>
+        <div><b>Click</b><span>발사</span></div>
+        <div><b>Shift</b><span>달리기</span></div>
+        <div><b>Space</b><span>점프</span></div>
+        <div><b>R</b><span>재장전</span></div>
+        <div><b>ESC</b><span>마우스 해제</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 일시정지 안내 -->
+  <div id="pauseHint">
+    화면을 클릭하면 다시 조작할 수 있습니다.
+  </div>
+
+  <!-- 인게임 HUD -->
+  <main id="hud">
+    <div class="hud-top">
+      <div class="hud-card health-card">
+        <span class="label">HEALTH</span>
+        <strong><span id="hpValue">100</span></strong>
+        <div class="bar">
+          <div id="hpBar"></div>
+        </div>
+      </div>
+
+      <div class="hud-card">
+        <span class="label">SCORE</span>
+        <strong id="scoreValue">0</strong>
+      </div>
+
+      <div class="hud-card">
+        <span class="label">KILLS</span>
+        <strong id="killValue">0</strong>
+      </div>
+
+      <div class="hud-card">
+        <span class="label">TIME</span>
+        <strong id="timeValue">00:00</strong>
+      </div>
+
+      <div class="hud-card">
+        <span class="label">WAVE</span>
+        <strong id="waveValue">1</strong>
+      </div>
+    </div>
+
+    <div class="ammo-box">
+      <span class="label">AMMO</span>
+      <div>
+        <strong id="ammoValue">30</strong>
+        <span>/</span>
+        <span id="reserveValue">150</span>
+      </div>
+      <small>R TO RELOAD</small>
+    </div>
+
+    <div class="combo-box">
+      <span>COMBO</span>
+      <strong id="comboValue">x1</strong>
+    </div>
+
+    <div class="radar-wrap">
+      <span>RADAR</span>
+      <canvas id="radarCanvas" width="130" height="130"></canvas>
+    </div>
+  </main>
+
+  <!-- 히트마커 -->
+  <div id="hitMarker">
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- 데미지 오버레이 -->
+  <div id="damageOverlay"></div>
+
+  <!-- 킬 알림 -->
+  <div id="killFeed"></div>
+
+  <!-- 게임 오버 -->
+  <section id="gameOverScreen" class="screen hidden">
+    <div class="panel gameover-panel">
+      <p class="eyebrow danger">SYSTEM FAILURE</p>
+      <h2>GAME OVER</h2>
+
+      <div class="result-grid">
+        <div>
+          <span>FINAL SCORE</span>
+          <strong id="finalScore">0</strong>
+        </div>
+        <div>
+          <span>SURVIVAL TIME</span>
+          <strong id="finalTime">00:00</strong>
+        </div>
+        <div>
+          <span>KILLS</span>
+          <strong id="finalKills">0</strong>
+        </div>
+      </div>
+
+      <button id="restartButton" class="primary-btn danger-btn">Restart Simulation</button>
+    </div>
+  </section>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
