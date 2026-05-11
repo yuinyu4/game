@@ -26,6 +26,7 @@
         <div><b>Click</b><span>발사</span></div>
         <div><b>Shift</b><span>달리기</span></div>
         <div><b>Space</b><span>점프</span></div>
+        <div><b>1 / 2 / 3 / 4</b><span>AR / DMR / MG / SR</span></div>
         <div><b>R</b><span>재장전</span></div>
         <div><b>ESC</b><span>마우스 해제</span></div>
       </div>
@@ -69,6 +70,12 @@
       </div>
     </div>
 
+    <div class="weapon-box">
+      <span class="label">WEAPON</span>
+      <strong id="weaponName">VOLT AR</strong>
+      <small id="fireMode">AR / AUTO</small>
+    </div>
+
     <div class="ammo-box">
       <span class="label">AMMO</span>
       <div>
@@ -89,6 +96,15 @@
       <canvas id="radarCanvas" width="130" height="130"></canvas>
     </div>
   </main>
+
+  <!-- 조준점 -->
+  <div id="crosshair" aria-hidden="true">
+    <span class="line top"></span>
+    <span class="line right"></span>
+    <span class="line bottom"></span>
+    <span class="line left"></span>
+    <span class="dot"></span>
+  </div>
 
   <!-- 히트마커 -->
   <div id="hitMarker">
